@@ -19,11 +19,7 @@ header {
 }
 
 .nav-link:hover {
-  background-color: light-dark(var(--accent-light-6),var(--accent-dark-6));
-}
-
-main {
-
+  background-color: light-dark(var(--accent-light-8),var(--accent-dark-8));
 }
 
 .logo-text {
@@ -91,9 +87,10 @@ main {
   margin-bottom: 20vh;
 }
 
-.category__container h1 {
+.category_header {
   color: light-dark(var(--accent-light-11),var(--accent-dark-11));
   text-align: center;
+  user-select: none;
 }
 
 .category_wrapper {
@@ -118,10 +115,11 @@ main {
 
 .category_box:hover {
   opacity: 0.8;
+  transform: scale(0.8);
 }
 
 .category_box:active {
-  transform: scale(0.8);
+  transform: scale(0.5);
 }
 
 @media only screen and (max-width: 400px) {
@@ -181,4 +179,36 @@ footer {
   padding: 0.5rem 0;
   color: light-dark(var(--sub-dark-1),var(--sub-light-1));
   font-weight: 400;
+}
+
+nav {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.navbox-link {
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: light-dark(var(--sub-dark-1),var(--sub-light-1));
+  padding: 0rem 1rem;
+  border-radius: 6px;
+  transition: color 0.4s ease;
+}
+.navbox-link:hover {
+  background-color: light-dark(var(--accent-light-6),var(--accent-dark-6));
+}
+
+.container__category h1 {
+  text-align: center;
+}
+
+.container__category {
+  height: 100vh;
+}
+
+.categorybox_header {
+  margin: 0 10vw;
+  border-bottom: 2px solid light-dark(var(--sub-light-12), var(--sub-dark-12));
 }

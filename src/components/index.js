@@ -1,5 +1,5 @@
 import Header from "./Header";
 import LandingPage from "./LandingPage";
-import Category from "./Category";
+import CategoryBox from "./CategoryBox";
 
-export {Header, LandingPage, Category}
+export {Header, LandingPage, CategoryBox}

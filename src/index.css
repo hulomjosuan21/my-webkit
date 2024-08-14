@@ -8,6 +8,7 @@
 }
 
 :root {
+  /* color-scheme: dark; */
   color-scheme: light dark;
 
   --accent: #8734CB;
