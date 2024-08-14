@@ -46,10 +46,14 @@ header {
 }
 
 .landingpage_text h1 {
-  font-size: clamp(2rem, 5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 900;
   text-align: start;
   color: light-dark(var(--sub-dark-1),var(--sub-light-1));
+}
+
+.landingpage_text h1 span {
+  color: light-dark(var(--accent-light-12),var(--accent-dark-12));
 }
 
 .landingpage_text p {
@@ -178,7 +182,7 @@ footer {
   font-size: clamp(0.6rem, 1vw, 1rem);
   padding: 0.5rem 0;
   color: light-dark(var(--sub-dark-1),var(--sub-light-1));
-  font-weight: 400;
+  font-weight: 600;
 }
 
 nav {
@@ -211,4 +215,56 @@ nav {
 .categorybox_header {
   margin: 0 10vw;
   border-bottom: 2px solid light-dark(var(--sub-light-12), var(--sub-dark-12));
+}
+
+/* modal style */
+
+.modal__wrapper {
+ display: grid;
+ grid-template-columns: 1fr;
+ margin: 2rem 5vw;
+ grid-auto-rows: auto;
+ grid-gap: 1rem;
+}
+
+.modal {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 5fr 2rem;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    'img info controls'
+  ;
+  align-items: start;
+  justify-content: center;
+  background-color: light-dark(var(--accent-light-3),var(--accent-dark-3));
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.modal-img-container {
+  grid-area: img;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-img-container img {
+  width: 20%;
+}
+
+.modal_info {
+  grid-area: info;
+  background-color: light-dark(var(--accent-light-4),var(--accent-dark-4));
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.modal_controls_wrapper {
+  grid-area: controls;
+}
+
+.modal_controls_wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
 }

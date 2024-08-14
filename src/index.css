@@ -106,3 +106,18 @@ html, body {
     transform: scale(1);
   }
 }
+
+.lazy_loading {
+  position: relative;
+  color: transparent;
+  animation: onLazy 5s ease-in-out infinite;
+}
+
+@keyframes onLazy {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}

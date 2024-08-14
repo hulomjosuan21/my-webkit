@@ -13,7 +13,7 @@ const CategoryBox = ({ onSelectCategory }) => {
     navigate("/category");
   };
 
-  const [category, setCategory] = useState()
+  const [category, setCategory] = useState([])
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "category"), (querySnapshot) => {
@@ -31,9 +31,9 @@ const CategoryBox = ({ onSelectCategory }) => {
       <NavLink to='/category' style={{ textDecoration: 'none' }}>
         <div className="category_wrapper">
           {
-            category && category.map((c) => (
+            (category.length != 0) ? category.map((c) => (
               <div className="onShowAnimate category_box animateOnScroll" key={c.id} onClick={() => handleCategorySelect(c.category_name)} >{c.category_name}</div>
-            ))
+            )) : <div className="onShowAnimate category_box animateOnScroll lazy_loading">Loading</div>
           }
         </div>
       </NavLink>
