@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 1.5rem);
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --accent: #8734CB;
+
+  --accent-light-1: #FDFCFF;
+  --accent-light-2: #FBF7FF;
+  --accent-light-3: #F6EDFF;
+  --accent-light-4: #F0E1FF;
+  --accent-light-5: #E8D4FF;
+  --accent-light-6: #DEC3FF;
+  --accent-light-7: #D0ACFB;
+  --accent-light-8: #BF8EF6;
+  --accent-light-9: #8734CB;
+  --accent-light-10: #7822BA;
+  --accent-light-11: #8634C9;
+  --accent-light-12: #44166A;
+
+  --sub-light-1: #FCFCFD;
+  --sub-light-2: #F9F9FB;
+  --sub-light-3: #EFF0F3;
+  --sub-light-4: #E7E8EC;
+  --sub-light-5: #E0E1E6;
+  --sub-light-6: #D8D9E0;
+  --sub-light-7: #CDCED7;
+  --sub-light-8: #B9BBC6;
+  --sub-light-9: #8B8D98;
+  --sub-light-10: #80828D;
+  --sub-light-11: #62636C;
+  --sub-light-12: #1E1F24;
+
+  --accent-dark-1: #140E1B;
+  --accent-dark-2: #1C1426;
+  --accent-dark-3: #2E1A42;
+  --accent-dark-4: #3C1F57;
+  --accent-dark-5: #462666;
+  --accent-dark-6: #533075;
+  --accent-dark-7: #663E8E;
+  --accent-dark-8: #8451B8;
+  --accent-dark-9: #8734CB;
+  --accent-dark-10: #7920BB;
+  --accent-dark-11: #D19AFF;
+  --accent-dark-12: #EAD9FF;
+
+  --sub-dark-1: #111113;
+  --sub-dark-2: #19191B;
+  --sub-dark-3: #222325;
+  --sub-dark-4: #292A2E;
+  --sub-dark-5: #303136;
+  --sub-dark-6: #393A40;
+  --sub-dark-7: #46484F;
+  --sub-dark-8: #5F606A;
+  --sub-dark-9: #6C6E79;
+  --sub-dark-10: #797B86;
+  --sub-dark-11: #B2B3BD;
+  --sub-dark-12: #EEEEF0;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: light-dark(var(--sub-light-1), var(--sub-dark-1));
+}
+
+.container {
+  margin: 0 10vw;
+}
+
+.onShowAnimate {
+  animation: onShow 1s ease;
+}
+
+@keyframes onShow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animateOnScroll {
+  animation: onScrollShow linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 10%;
+}
+
+@keyframes onScrollShow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
