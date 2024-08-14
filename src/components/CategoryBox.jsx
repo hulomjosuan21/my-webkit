@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { NavLink, useNavigate } from "react-router-dom"
+import { db } from "../firebase/FirebaseConfig";
+import { collection, onSnapshot  } from "firebase/firestore";
+import { useState, useEffect } from "react";
 
 const CategoryBox = ({ onSelectCategory }) => {
 
@@ -8,10 +11,18 @@ const CategoryBox = ({ onSelectCategory }) => {
   const handleCategorySelect = (_category) => {
     onSelectCategory(_category);
     navigate("/category");
-    localStorage.setItem("current_category", _category);
   };
 
-  const category = ["Color","Tools","UI","More","Components","Resource"]
+  const [category, setCategory] = useState()
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "category"), (querySnapshot) => {
+      const _category = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setCategory(_category);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <section className="category__container">
@@ -20,8 +31,8 @@ const CategoryBox = ({ onSelectCategory }) => {
       <NavLink to='/category' style={{ textDecoration: 'none' }}>
         <div className="category_wrapper">
           {
-            category && category.map((category_name, index) => (
-              <div className="onShowAnimate category_box animateOnScroll" key={index} onClick={() => handleCategorySelect(category_name)} >{category_name}</div>
+            category && category.map((c) => (
+              <div className="onShowAnimate category_box animateOnScroll" key={c.id} onClick={() => handleCategorySelect(c.category_name)} >{c.category_name}</div>
             ))
           }
         </div>

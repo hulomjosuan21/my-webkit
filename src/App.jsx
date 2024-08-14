@@ -3,12 +3,17 @@ import "./App.css"
 import { LandingPage, Header, CategoryBox } from "./components"
 import Category from "./pages/Category"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useEffect } from "react"
 
 const App = () => {
 
-  const [selectedCategory, setSelectedCategory] =useState(() => {
-    return localStorage.getItem("current_category") || "/";
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    return localStorage.getItem("selectedCategory") || "";
   });
+
+  useEffect(() => {
+    localStorage.setItem("selectedCategory", selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <BrowserRouter>
