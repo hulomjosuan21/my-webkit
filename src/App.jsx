@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./App.css"
 import { LandingPage, Header, CategoryBox } from "./components"
 import Category from "./pages/Category"
+import Admin from "./pages/Admin"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect } from "react"
 
@@ -26,6 +27,7 @@ const App = () => {
             <CategoryBox onSelectCategory={setSelectedCategory} />
           </>} />
           <Route path="/category" element={<Category categoryName={selectedCategory} />} />
+          <Route path="/josuan" element={<Admin/>} />
         </Routes>
 
         

@@ -1,0 +1,43 @@
+.form_wrapper {
+  display: flex;
+  margin: 2rem 10vw;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: light-dark(var(--accent-light-4),var(--accent-dark-4));
+  border-radius: 12px;
+}
+
+.wrapper1 {
+  flex: 1;
+}
+
+.wrapper2 {
+  flex: 1;
+}
+
+.form-select {
+  margin-bottom: 2rem;
+}
+
+.table_wrapper {
+  border-top: 2px solid black;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.td-style-name {
+  text-align: center;
+  font-weight: 600;
+}
+
+.td-style-id {
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.td-style-controls {
+  text-align: center;
+}
